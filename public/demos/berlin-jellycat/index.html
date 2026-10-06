@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>柏林限定 Jellycat 代購</title>
+<meta name="description" content="柏林限定 Jellycat 代購下單頁，台灣取貨／寄送。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: 單欄手機優先；商品卡 → 訂購表單 → 注意事項，底部固定金額列 */
+:root {
+  --bg: #f3f5f8;          /* 柏林早晨的淡灰藍 */
+  --surface: #ffffff;
+  --ink: #2b2d3a;
+  --muted: #6b6f80;
+  --line: #e2e5ee;
+  --pink: #e87fa0;        /* 棉花糖粉：主要按鈕 */
+  --pink-ink: #ffffff;
+  --pink-soft: #fde9ef;
+  --mustard: #d9a13b;     /* 椒鹽卷餅金：價格、標記 */
+  --mustard-soft: #fbf1dc;
+  --danger: #c2413b;
+  --ok: #3f8f6b;
+  --f-display: "Fredoka", "Noto Sans TC", system-ui, sans-serif;
+  --f-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --r: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17181f; --surface: #22242e; --ink: #eceef5; --muted: #a2a6b6; --line: #343744;
+    --pink: #f095b1; --pink-ink: #2a1520; --pink-soft: #3a2530; --mustard: #e8b65a; --mustard-soft: #3a3020;
+    --danger: #f07a72; --ok: #6cc59b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17181f; --surface: #22242e; --ink: #eceef5; --muted: #a2a6b6; --line: #343744;
+  --pink: #f095b1; --pink-ink: #2a1520; --pink-soft: #3a2530; --mustard: #e8b65a; --mustard-soft: #3a3020;
+  --danger: #f07a72; --ok: #6cc59b; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.65 var(--f-body);
+  padding-inline: 16px; padding-block: 0 112px;
+}
+.wrap { max-width: 560px; margin: 0 auto; display: grid; gap: 28px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 2px; }
+
+/* header */
+.hero { padding-top: 32px; display: grid; gap: 10px; }
+.stamp {
+  justify-self: start; font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--mustard); border: 1.5px solid var(--mustard); border-radius: 999px; padding: 6px 12px;
+}
+.hero h1 { font: 600 30px/1.25 var(--f-display); }
+.hero h1 span { color: var(--pink); }
+.hero p { margin: 0; color: var(--muted); }
+.deadline { font-size: 14px; color: var(--ink); background: var(--mustard-soft); border-radius: 12px; padding: 10px 14px; }
+.deadline.closed { background: var(--pink-soft); font-weight: 500; }
+.arrival { font-size: 14px; color: var(--ink); border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.draft { font-size: 13px; color: var(--danger); border: 1.5px dashed var(--danger); border-radius: 12px; padding: 10px 14px; }
+
+.sec-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.sec-title h2 { font: 600 20px/1.3 var(--f-display); }
+.sec-title small { color: var(--muted); font-size: 13px; }
+.sec-note { margin: -4px 0 12px; color: var(--muted); font-size: 13px; }
+
+/* products */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.card { background: var(--surface); border-radius: var(--r); padding: 10px 10px 14px; display: flex; flex-direction: column; gap: 8px; border: 1.5px solid transparent; transition: border-color .2s; }
+.card.picked { border-color: var(--pink); }
+.ph {
+  aspect-ratio: 1; max-width: 100%; border-radius: 14px; overflow: hidden; position: relative;
+  background: var(--tint); display: grid; place-items: center;
+}
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph .mono { font: 600 40px/1 var(--f-display); color: var(--ink); opacity: .55; }
+.ph .cap { position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-size: 11px; color: var(--ink); opacity: .55; }
+.card h3 { font: 600 15px/1.3 var(--f-display); min-height: 2.6em; }
+.card .zh { font-size: 12px; color: var(--muted); margin-top: -4px; }
+.price { font: 600 17px/1 var(--f-display); color: var(--mustard); font-variant-numeric: tabular-nums; }
+.price.tbd { font: 500 13px/1.2 var(--f-body); }
+.perk { font-size: 11px; line-height: 1.4; color: var(--muted); margin-top: -2px; }
+.card .qty, .card .paused { margin-top: auto; }   /* 名稱長短不同時，按鈕仍對齊在卡片底部 */
+.paused { align-self: flex-start; font-size: 12px; color: var(--muted); background: var(--bg); border-radius: 999px; padding: 4px 10px; justify-self: start; }
+.qty { display: grid; grid-template-columns: 36px 1fr 36px; align-items: center; background: var(--bg); border-radius: 999px; padding: 3px; }
+.qty button { width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--surface); font-size: 18px; cursor: pointer; line-height: 1; }
+.qty button:disabled { opacity: .35; cursor: default; }
+.qty output { text-align: center; font: 600 16px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+
+/* form */
+form { display: grid; gap: 28px; }
+.panel { background: var(--surface); border-radius: var(--r); padding: 18px 16px; display: grid; gap: 16px; }
+.field { display: grid; gap: 6px; }
+.field label, .legend { font-weight: 500; font-size: 14px; }
+.req { color: var(--pink); margin-left: 2px; }
+.opt { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 4px; }
+.hint { color: var(--muted); font-size: 12px; }
+input[type=text], input[type=email], input[type=tel], select, textarea {
+  width: 100%; border: 1.5px solid var(--line); background: var(--surface); border-radius: 12px; padding: 11px 12px; font-size: 16px;
+}
+textarea { min-height: 88px; resize: vertical; }
+input:focus, select:focus, textarea:focus { border-color: var(--pink); outline: none; }
+.row { display: grid; grid-template-columns: 120px 1fr; gap: 8px; }
+.invalid input, .invalid select, .invalid .choices { border-color: var(--danger) !important; }
+.err { color: var(--danger); font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+.photos { display: flex; flex-wrap: wrap; gap: 10px; }
+.thumb { position: relative; width: 88px; height: 88px; border-radius: 12px; overflow: hidden; background: var(--bg); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb button { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; border-radius: 50%; border: 0; background: var(--ink); color: var(--surface); font-size: 15px; line-height: 1; cursor: pointer; opacity: .85; }
+.photo-add { width: 88px; height: 88px; border-radius: 12px; border: 1.5px dashed var(--line); display: grid; place-items: center; text-align: center; font-size: 12px; color: var(--muted); cursor: pointer; line-height: 1.4; }
+.photo-add:hover { border-color: var(--pink); color: var(--ink); }
+#f-photos:focus-visible + .photo-add { outline: 3px solid var(--pink); outline-offset: 2px; }
+
+.choices { display: grid; gap: 8px; border-radius: 14px; border: 1.5px solid transparent; }
+.choice { display: grid; grid-template-columns: 20px 1fr auto; gap: 10px; align-items: start; border: 1.5px solid var(--line); border-radius: 14px; padding: 12px; cursor: pointer; }
+.choice input { margin: 3px 0 0; accent-color: var(--pink); }
+.choice:has(input:checked) { border-color: var(--pink); background: var(--pink-soft); }
+.choice b { font-weight: 500; display: block; }
+.choice span.d { color: var(--muted); font-size: 12px; }
+.choice .fee { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+/* summary */
+.sum { display: grid; gap: 8px; font-variant-numeric: tabular-nums; }
+.sum .li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+.sum .li span:first-child { min-width: 0; }
+.sum .empty { color: var(--muted); font-size: 14px; }
+.sum hr { border: 0; border-top: 1.5px dashed var(--line); margin: 4px 0; width: 100%; }
+.sum .total { font: 600 18px/1.3 var(--f-display); }
+.sum .total span:last-child { color: var(--pink); }
+.sum .note { color: var(--muted); font-size: 12px; }
+
+.agree { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 14px; align-items: start; }
+.agree input { margin: 4px 0 0; accent-color: var(--pink); }
+
+.btn {
+  border: 0; border-radius: 999px; background: var(--pink); color: var(--pink-ink);
+  font: 600 16px/1 var(--f-display); padding: 16px 22px; cursor: pointer; width: 100%;
+}
+.btn:disabled { opacity: .6; cursor: progress; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+
+/* notes */
+.notes { background: var(--surface); border-radius: var(--r); padding: 18px 16px; }
+.notes ol { margin: 0; padding-left: 1.3em; display: grid; gap: 10px; }
+.notes li::marker { color: var(--mustard); font-family: var(--f-display); font-weight: 600; }
+.notes b { font-weight: 500; }
+
+footer { color: var(--muted); font-size: 12px; text-align: center; padding-bottom: 8px; }
+
+/* sticky bar */
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--surface); border-top: 1px solid var(--line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.bar .in { max-width: 560px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.bar .t { font-variant-numeric: tabular-nums; line-height: 1.3; }
+.bar .t small { display: block; color: var(--muted); font-size: 12px; }
+.bar .t b { font: 600 19px/1.2 var(--f-display); color: var(--pink); }
+.bar .btn { width: auto; padding: 13px 20px; font-size: 15px; }
+
+/* done */
+.done { display: grid; gap: 14px; }
+.done h2 { font: 600 22px/1.3 var(--f-display); }
+.done pre { white-space: pre-wrap; word-break: break-word; background: var(--bg); border-radius: 12px; padding: 14px; font: 13px/1.6 var(--f-body); margin: 0; max-height: 360px; overflow: auto; }
+.contact { display: grid; gap: 6px; font-size: 14px; }
+.contact code { font: 500 14px var(--f-body); background: var(--mustard-soft); padding: 2px 8px; border-radius: 6px; user-select: all; }
+.toast { color: var(--ok); font-size: 13px; min-height: 1.2em; }
+
+@media (min-width: 640px) { .hero h1 { font-size: 36px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="stamp" id="stamp">Berlin Exclusive</span>
+    <h1 id="title">柏林限定 <span>Jellycat</span> 代購</h1>
+    <p id="intro"></p>
+    <div class="deadline" id="deadline" hidden></div>
+    <div class="arrival" id="arrival" hidden></div>
+    <div class="draft" id="demoNote" hidden>作品展示版：所有功能都可以操作，但送出後不會真的下單。</div>
+  </header>
+
+  <main id="main" style="display:grid;gap:28px">
+    <section aria-labelledby="h-products">
+      <div class="sec-title"><h2 id="h-products">選擇商品</h2><small id="limitHint"></small></div>
+      <p class="sec-note" id="priceNote" hidden></p>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <form id="form" novalidate>
+      <section aria-labelledby="h-wish">
+        <div class="sec-title"><h2 id="h-wish">許願代購</h2><small>選填</small></div>
+        <div class="panel">
+          <div class="field">
+            <label for="f-wish">其他想代購的商品</label>
+            <textarea id="f-wish" placeholder="例：Zsazsa Boar × 1、Pecanine Dog × 1"></textarea>
+            <span class="hint">沒列在上方的商品也可以許願。我們會依現場狀況私訊報價，你確認後才代購，不列入下方試算。</span>
+          </div>
+          <div class="field">
+            <span class="legend" id="lg-photos">參考照片<span class="opt">選填，最多 <span id="photoMax">2</span> 張</span></span>
+            <div class="photos" aria-labelledby="lg-photos">
+              <div class="photos" id="photoList"></div>
+              <input type="file" id="f-photos" accept="image/*" multiple class="sr-only">
+              <label class="photo-add" id="photoAdd" for="f-photos">＋<br>加入照片</label>
+            </div>
+            <span class="err" id="photoErr" role="alert"></span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-buyer">
+        <div class="sec-title"><h2 id="h-buyer">訂購人資料</h2></div>
+        <div class="panel">
+          <div class="field" data-f="name">
+            <label for="f-name">姓名<span class="req">*</span></label>
+            <input type="text" id="f-name" autocomplete="name" placeholder="收件人姓名，與取貨證件相同">
+          </div>
+          <div class="field" data-f="contact">
+            <label for="f-contact">Instagram 帳號<span class="req">*</span></label>
+            <input type="text" id="f-contact" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="例：@your_ig">
+            <span class="hint">我們會用 Instagram 私訊跟你確認訂單與付款。</span>
+          </div>
+          <div class="field" data-f="phone">
+            <label for="f-phone">聯絡電話<span class="req">*</span></label>
+            <input type="tel" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="0912-345-678">
+            <span class="hint">超商取貨與宅配需要收件人手機。</span>
+          </div>
+          <div class="field" data-f="email">
+            <label for="f-email">Email<span class="opt">選填</span></label>
+            <input type="email" id="f-email" autocomplete="email" placeholder="you@example.com">
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-ship">
+        <div class="sec-title"><h2 id="h-ship">台灣取貨／寄送</h2><small>運費另計</small></div>
+        <div class="panel">
+          <div class="field" data-f="ship">
+            <span class="legend" id="lg-ship">取貨方式<span class="req">*</span></span>
+            <div class="choices" id="ship" role="radiogroup" aria-labelledby="lg-ship"></div>
+          </div>
+          <div class="field" data-f="shipinfo">
+            <label for="f-shipinfo">取貨門市或地址<span class="req">*</span></label>
+            <input type="text" id="f-shipinfo" placeholder="例：7-11 ○○門市／台北市○○區…">
+          </div>
+          <div class="field">
+            <label for="f-note">備註<span class="opt">選填</span></label>
+            <textarea id="f-note" placeholder="例：缺貨時可接受替代款、想合併其他訂單…"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-sum">
+        <div class="sec-title"><h2 id="h-sum">訂單金額試算</h2></div>
+        <div class="panel">
+          <div class="sum" id="sum"></div>
+          <label class="agree" data-f="agree"><input type="checkbox" id="f-agree"><span>我已閱讀並同意下方的代購注意事項。</span></label>
+          <div class="err" id="formErr" role="alert"></div>
+          <button class="btn" type="submit" id="submitBtn">送出訂單</button>
+        </div>
+      </section>
+    </form>
+
+    <section class="notes" aria-labelledby="h-notes" id="notes">
+      <div class="sec-title"><h2 id="h-notes">代購注意事項</h2></div>
+      <ol id="noteList"></ol>
+    </section>
+  </main>
+
+  <section class="panel done" id="done" hidden aria-live="polite">
+    <h2>訂單已建立</h2>
+    <p style="margin:0" id="doneMsg"></p>
+    <pre id="orderText"></pre>
+    <button class="btn" type="button" id="copyBtn">複製訂單內容</button>
+    <div class="toast" id="toast"></div>
+    <div class="contact" id="contactBox"></div>
+    <button class="btn ghost" type="button" id="newBtn">再下一筆訂單</button>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<div class="bar" id="bar">
+  <div class="in">
+    <div class="t"><small id="barCount">尚未選擇商品</small><b id="barTotal">NT$ 0</b></div>
+    <button class="btn" type="button" id="barBtn">填寫資料</button>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+ *  設定區：只要改這裡就好
+ * ===================================================================== */
+const CONFIG = {
+  shopName: "柏林限定 Jellycat 代購",
+  intro: "在柏林門市現場幫你帶回限定款。送出訂單後，我們會私訊確認庫存與付款方式。",
+  deadline: "收單至 10/20（二）23:59（台灣時間）",                 // 收單截止，例："收單至 10/20（一）23:59"，留空則不顯示
+  // 自動關閉下單的時間，+08:00 代表台灣時間；留空則不會自動關閉
+  closeAt: "",
+  closedMessage: "本次收單已截止，謝謝大家！下次開團會在 Instagram 公告。",
+  arrival: "預計 12 月第一週抵台，抵台後陸續寄出或安排面交。",   // 顯示在頁首，留空則不顯示
+  priceNote: "標示「含禮品包裝」的 Jellyfest 體驗款，售價含禮品包裝、貼紙和徽章。",   // 顯示在商品區標題下方，留空則不顯示
+  showDraftBanner: true,        // 價格確定後改成 false
+  demoMode: true,              // 作品集展示版：true 時不送出訂單，頁首顯示展示版說明
+
+  // 送單網址：貼上 Google Apps Script 網頁應用程式網址（見 README）。
+  // 留空時，送出後會產生訂單文字，請買家複製傳給你。
+  orderEndpoint: "",
+
+  // 送到 Google 表單：填入表單網址與各題的 entry 編號（見 README）。
+  // formUrl 留空就不送。可以和 orderEndpoint 擇一或同時使用。
+  // 某一題不需要就把 entry 留空字串。
+  googleForm: {
+    formUrl: "",                // 例："https://docs.google.com/forms/d/e/1FAIpQL.../viewform"
+    entries: {
+      orderId:  "",             // 訂單編號，例："entry.123456789"
+      name:     "",             // 姓名
+      contact:  "",             // 聯絡方式（例：Instagram：@abc123）
+      phone:    "",             // 聯絡電話
+      email:    "",             // Email
+      items:    "",             // 商品明細
+      total:    "",             // 預估金額
+      shipping: "",             // 取貨方式
+      shipInfo: "",             // 取貨門市或地址
+      note:     "",             // 備註
+      fullText: "",             // 完整訂單內容
+      wish:     "",             // 許願商品
+    },
+  },
+
+  // 你的聯絡帳號（顯示在送出後的畫面）
+  contact: { line: "", instagram: "" },
+
+  currency: "NT$",
+  serviceFeePerItem: 0,         // 每件代購費（已含在售價就填 0）
+  maxWishPhotos: 2,             // 許願照片最多幾張（Apps Script 的 MAX_PHOTOS 要一致）
+  maxQtyPerItem: 1,             // 每位買家每款上限（官方限購每款每人 3 隻）
+
+  // 商品：price 填台幣整數；尚未定價填 null（顯示「價格確認中」）
+  // image 填圖片網址或相對路徑（如 "img/wilhelm.jpg"），留空顯示預留位置
+  // status: "open" 可下單｜"paused" 暫停接單
+  // perk：顯示在價格下方的小字，例如是否含禮品包裝；不需要就不寫
+  products: [
+    { id: "wilhelm",  name: "Wilhelm Von Bratwurst", zh: "德式香腸", price: 2580, image: "", status: "open", tint: "#f6dccb", mono: "W", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "heinrich", name: "Heinrich Pretzel",      zh: "椒鹽卷餅", price: 2780, image: "", status: "open", tint: "#f3e3c1", mono: "H", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "kathrin",  name: "Kathrin Candy Floss",   zh: "棉花糖",   price: 2780, image: "", status: "open", tint: "#f9dbe6", mono: "K", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "vonilla",  name: "Von Illa Eiskaffee",    zh: "冰咖啡",   price: 2780, image: "", status: "open", tint: "#e2dcd3", mono: "V", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "almond",   name: "Candied Almond",        zh: "糖衣杏仁",   price: 1580, image: "", status: "open", tint: "#efe4d6", mono: "A" },
+    { id: "gingerbread", name: "Schönherz Gingerbread Bag Charm", zh: "薑餅心吊飾", price: 1780, image: "", status: "open", tint: "#efe4d6", mono: "G" },
+  ],
+
+  // 取貨方式：fee 填數字會列入試算；填 null 顯示「另計」
+  // placeholder：選了這個方式後，「取貨門市或地址」欄位顯示的範例
+  shipping: [
+    { id: "711",    name: "7-11 賣貨便",   desc: "到貨後寄送至指定門市",       fee: null, placeholder: "例：7-11 信義門市（店號 123456）" },
+    { id: "home",   name: "宅配到府",      desc: "黑貓或郵局，依包裹大小計價", fee: null, placeholder: "例：台北市大安區○○路○段○號○樓" },
+    { id: "meet",   name: "面交",          desc: "時間地點另行約定",           fee: 0, placeholder: "例：希望在台北捷運○○站附近" },
+  ],
+
+  notes: [
+    "<b>限定商品依柏林門市現場庫存為準。</b>送出訂單代表預約代購，不保證一定買得到。",
+    "<b>每款名額有限，依下單順序購買。</b>官方限購每款每人 3 隻，超出名額或未購得者全額退款。",
+    "<b>收到匯款資訊後 3 天內付清商品全額。</b>我們會在 Instagram 私訊匯款帳號；逾期未付款視為取消訂單，名額由下一位遞補。台灣運費於抵台後另收。",
+    "<b>缺貨時全額退款或取消。</b>未購得的商品，已付款項會以原付款方式全額退回；尚未付款則直接取消該品項，並私訊通知你。",
+    "<b>購入後原則上不接受因個人因素取消。</b>商品在門市結帳後即無法退回，請確認後再下單。",
+    "<b>許願商品不保證買得到。</b>我們會依現場庫存與官方限購私訊報價，你確認並付款後才代購。",
+    "<b>娃娃為手工縫製，可能有個體差異。</b>毛色、表情、縫線位置略有不同屬正常現象，不另挑選。",
+    "<b>台灣運費另計。</b>商品預計 12 月第一週抵台，抵台後依取貨方式與包裹大小另行通知運費。",
+    "送出訂單後，我們會在 Instagram 私訊與你確認品項、金額與匯款資訊，完成付款後訂單才算成立。",
+  ],
+};
+/* ===================================================================== */
+
+const $ = (s) => document.querySelector(s);
+const fmt = (n) => CONFIG.currency + " " + n.toLocaleString("zh-TW");
+const qty = Object.fromEntries(CONFIG.products.map((p) => [p.id, 0]));
+
+function esc(s) { return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+function renderHeader() {
+  $("#title").innerHTML = esc(CONFIG.shopName).replace("Jellycat", "<span>Jellycat</span>");
+  $("#intro").textContent = CONFIG.intro;
+  // 頁首的截止時間與範例價格提示可以從 HTML 刪掉，這裡找不到就略過
+  const deadline = $("#deadline"), draft = $("#draft");
+  if (deadline && CONFIG.deadline) { deadline.textContent = CONFIG.deadline; deadline.hidden = false; }
+  if (draft) draft.hidden = !CONFIG.showDraftBanner;
+  $("#limitHint").textContent = `每款最多 ${CONFIG.maxQtyPerItem} 隻`;
+  if (CONFIG.arrival && $("#arrival")) { $("#arrival").textContent = CONFIG.arrival; $("#arrival").hidden = false; }
+  if (CONFIG.priceNote) { $("#priceNote").textContent = CONFIG.priceNote; $("#priceNote").hidden = false; }
+  $("#noteList").innerHTML = CONFIG.notes.map((n) => `<li>${n}</li>`).join("");
+  $("#foot").textContent = `${CONFIG.shopName}・個人代購服務，與 Jellycat 官方無關${CONFIG.demoMode ? "・作品展示版" : ""}`;
+  $("#demoNote").hidden = !CONFIG.demoMode;
+}
+
+function renderProducts() {
+  $("#grid").innerHTML = CONFIG.products.map((p) => {
+    const open = p.status !== "paused" && !isClosed();
+    const img = p.image
+      ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`
+      : `<span class="mono">${esc(p.mono || p.name[0])}</span><span class="cap">商品圖片</span>`;
+    const price = p.price == null ? `<div class="price tbd">價格確認中</div>` : `<div class="price">${fmt(p.price)}</div>`;
+    const ctrl = open
+      ? `<div class="qty" role="group" aria-label="${esc(p.name)} 數量">
+           <button type="button" data-id="${p.id}" data-d="-1" aria-label="減少">−</button>
+           <output id="q-${p.id}">0</output>
+           <button type="button" data-id="${p.id}" data-d="1" aria-label="增加">+</button>
+         </div>`
+      : `<span class="paused">${isClosed() ? "已截止收單" : "暫停接單"}</span>`;
+    return `<article class="card" id="c-${p.id}">
+      <div class="ph" style="--tint:${esc(p.tint || "#eee")}">${img}</div>
+      <h3>${esc(p.name)}</h3><div class="zh">${esc(p.zh || "")}</div>
+      ${price}${p.perk ? `<div class="perk">${esc(p.perk)}</div>` : ""}${ctrl}</article>`;
+  }).join("");
+}
+
+$("#f-wish").addEventListener("input", update);
+
+/* ---------- 許願照片：在手機上先壓縮，再跟訂單一起送出 ---------- */
+let photos = [];   // { type, data(base64), preview }
+
+async function compressImage(file) {
+  const url = URL.createObjectURL(file);
+  try {
+    const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+    const scale = Math.min(1, 1200 / Math.max(img.naturalWidth, img.naturalHeight));
+    const cv = document.createElement("canvas");
+    cv.width = Math.round(img.naturalWidth * scale); cv.height = Math.round(img.naturalHeight * scale);
+    const ctx = cv.getContext("2d");
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, cv.width, cv.height);   // 透明背景轉 JPG 不會變黑
+    ctx.drawImage(img, 0, 0, cv.width, cv.height);
+    const dataUrl = cv.toDataURL("image/jpeg", 0.82);
+    return { type: "image/jpeg", data: dataUrl.split(",")[1], preview: dataUrl };
+  } finally { URL.revokeObjectURL(url); }
+}
+
+function renderPhotos() {
+  $("#photoList").innerHTML = photos.map((p, i) =>
+    `<div class="thumb"><img src="${p.preview}" alt="許願照片 ${i + 1}"><button type="button" data-rm="${i}" aria-label="移除第 ${i + 1} 張照片">×</button></div>`).join("");
+  $("#photoAdd").hidden = photos.length >= CONFIG.maxWishPhotos;
+}
+
+$("#photoMax").textContent = CONFIG.maxWishPhotos;
+$("#f-photos").addEventListener("change", async (e) => {
+  const files = [...e.target.files]; e.target.value = "";
+  const err = $("#photoErr"); err.textContent = "";
+  for (const f of files) {
+    if (photos.length >= CONFIG.maxWishPhotos) { err.textContent = `最多 ${CONFIG.maxWishPhotos} 張照片`; break; }
+    if (!f.type.startsWith("image/")) { err.textContent = "只能上傳照片檔"; continue; }
+    try { photos.push(await compressImage(f)); }
+    catch (_) { err.textContent = "這張照片讀取不了，請換成 JPG 或 PNG 再試一次"; }
+  }
+  renderPhotos(); update();
+});
+$("#photoList").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-rm]"); if (!b) return;
+  photos.splice(Number(b.dataset.rm), 1);
+  $("#photoErr").textContent = "";
+  renderPhotos(); update();
+});
+
+$("#grid").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-id]"); if (!b) return;
+  const id = b.dataset.id;
+  qty[id] = Math.max(0, Math.min(CONFIG.maxQtyPerItem, qty[id] + Number(b.dataset.d)));
+  update();
+});
+
+/* ---------- 截止收單 ---------- */
+const closeTime = CONFIG.closeAt ? new Date(CONFIG.closeAt).getTime() : NaN;
+if (CONFIG.closeAt && isNaN(closeTime)) console.warn("closeAt 格式不正確，不會自動關閉：", CONFIG.closeAt);
+let serverClosed = false;   // 試算表那端回覆已截止（買家裝置時間不準時也擋得住）
+function isClosed() { return serverClosed || (!isNaN(closeTime) && Date.now() >= closeTime); }
+
+let closedApplied = false;
+function applyClosed() {
+  if (closedApplied || !isClosed()) return;
+  closedApplied = true;
+  Object.keys(qty).forEach((k) => (qty[k] = 0));
+  const box = $("#deadline");
+  if (box) { box.textContent = CONFIG.closedMessage; box.classList.add("closed"); box.hidden = false; }
+  if (!$("#done").hidden) return;   // 剛送出的訂單畫面不要打斷
+  $("#form").hidden = true; $("#bar").hidden = true;
+  renderProducts(); update();
+}
+
+function renderShipping() {
+  $("#ship").innerHTML = CONFIG.shipping.map((s) => `
+    <label class="choice"><input type="radio" name="ship" value="${s.id}">
+      <span><b>${esc(s.name)}</b><span class="d">${esc(s.desc)}</span></span>
+      <span class="fee">${s.fee == null ? "運費另計" : s.fee === 0 ? "免運" : fmt(s.fee)}</span>
+    </label>`).join("");
+  $("#ship").addEventListener("change", () => {
+    // 依取貨方式換提示文字
+    const s = CONFIG.shipping.find((x) => x.id === document.querySelector("input[name=ship]:checked")?.value);
+    if (s && s.placeholder) $("#f-shipinfo").placeholder = s.placeholder;
+    update();
+  });
+}
+
+function calc() {
+  const lines = CONFIG.products.filter((p) => qty[p.id] > 0).map((p) => ({
+    id: p.id, name: p.name, qty: qty[p.id], price: p.price,
+    subtotal: p.price == null ? null : p.price * qty[p.id],
+  }));
+  const count = lines.reduce((a, l) => a + l.qty, 0);
+  const tbd = lines.some((l) => l.price == null);
+  const items = lines.reduce((a, l) => a + (l.subtotal || 0), 0);
+  const service = CONFIG.serviceFeePerItem * count;
+  const shipId = document.querySelector("input[name=ship]:checked")?.value;
+  const ship = CONFIG.shipping.find((s) => s.id === shipId) || null;
+  const shipFee = ship && ship.fee != null ? ship.fee : 0;
+  const wish = ($("#f-wish") ? $("#f-wish").value.trim() : "");
+  const hasWish = !!wish || photos.length > 0;
+  return { lines, count, tbd, items, service, ship, shipFee, wish, hasWish, total: items + service + shipFee };
+}
+
+function update() {
+  const c = calc();
+  CONFIG.products.forEach((p) => {
+    const o = $("#q-" + p.id); if (!o) return;
+    o.textContent = qty[p.id];
+    $(`button[data-id="${p.id}"][data-d="-1"]`).disabled = qty[p.id] === 0;
+    $(`button[data-id="${p.id}"][data-d="1"]`).disabled = qty[p.id] >= CONFIG.maxQtyPerItem;
+    $("#c-" + p.id).classList.toggle("picked", qty[p.id] > 0);
+  });
+  let h = "";
+  if (!c.lines.length && !c.hasWish) h = `<div class="empty">還沒選商品，先在上方加入數量，或填寫許願代購。</div>`;
+  else {
+    h += c.lines.map((l) => `<div class="li"><span>${esc(l.name)} × ${l.qty}</span><span>${l.subtotal == null ? "確認中" : fmt(l.subtotal)}</span></div>`).join("");
+    if (c.hasWish) h += `<div class="li"><span>許願商品</span><span>另行報價</span></div>`;
+    if (c.service) h += `<div class="li"><span>代購費（${fmt(CONFIG.serviceFeePerItem)} × ${c.count}）</span><span>${fmt(c.service)}</span></div>`;
+    h += `<div class="li"><span>台灣運費${c.ship ? "（" + esc(c.ship.name) + "）" : ""}</span><span>${c.ship && c.ship.fee != null ? (c.ship.fee ? fmt(c.ship.fee) : "免運") : "另計"}</span></div>`;
+    h += `<hr><div class="li total"><span>預估金額${c.hasWish ? "（不含許願）" : ""}</span><span>${fmt(c.total)}${c.tbd ? " 起" : ""}</span></div>`;
+    h += `<div class="note">實際金額以私訊確認為準${c.tbd ? "；部分商品價格確認中，未計入" : ""}。</div>`;
+  }
+  $("#sum").innerHTML = h;
+  $("#barCount").textContent = c.count ? `已選 ${c.count} 件` : "尚未選擇商品";
+  $("#barTotal").textContent = fmt(c.total) + (c.tbd ? " 起" : "");
+}
+
+/* ---------- submit ---------- */
+function setErr(f, on) { document.querySelector(`[data-f="${f}"]`)?.classList.toggle("invalid", on); }
+
+function validate(c) {
+  const errs = [];
+  const name = $("#f-name").value.trim(), contact = $("#f-contact").value.trim().replace(/^@+/, ""), email = $("#f-email").value.trim();
+  setErr("name", !name); if (!name) errs.push("請填寫姓名");
+  setErr("contact", !contact); if (!contact) errs.push("請填寫 Instagram 帳號");
+  const phone = $("#f-phone").value.replace(/[\s\-()]/g, "");
+  if (!phone) { setErr("phone", true); errs.push("請填寫聯絡電話"); }
+  else if (!/^(\+?886|0)\d{8,9}$/.test(phone)) { setErr("phone", true); errs.push("電話格式不正確，例：0912345678"); }
+  else setErr("phone", false);
+  const badEmail = email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  setErr("email", badEmail); if (badEmail) errs.push("Email 格式不正確");
+  setErr("ship", !c.ship); if (!c.ship) errs.push("請選擇取貨方式");
+  const shipInfo = $("#f-shipinfo").value.trim();
+  setErr("shipinfo", !shipInfo); if (!shipInfo) errs.push("請填寫取貨門市或地址");
+  if (!c.count && !c.hasWish) errs.push("請至少選擇一件商品，或填寫許願代購");
+  const agree = $("#f-agree").checked; setErr("agree", !agree); if (!agree) errs.push("請勾選同意注意事項");
+  return errs;
+}
+
+// 訂單編號：BJ + 月日 + IG 帳號 + 2 碼亂數，例：BJ1003-your_ig-K7
+// 最後 2 碼避免同一位買家同一天下兩筆時編號重複
+function orderId(ig) {
+  const d = new Date(), p = (n) => String(n).padStart(2, "0");
+  const name = String(ig || "").replace(/[^\w.]/g, "").toLowerCase();
+  const rand = Math.random().toString(36).slice(2, 4).toUpperCase().padEnd(2, "0");
+  return `BJ${p(d.getMonth() + 1)}${p(d.getDate())}-${name ? name + "-" : ""}${rand}`;
+}
+
+function buildText(o) {
+  return [
+    `【${CONFIG.shopName}】訂單 ${o.id}`,
+    `時間：${o.createdAt}`,
+    ``,
+    ...o.items.map((l) => `・${l.name} × ${l.qty}　${l.subtotal == null ? "價格確認中" : fmt(l.subtotal)}`),
+    o.wish ? `・許願商品（另行報價）：${o.wish}` : null,
+    o.photos.length ? `・許願照片：${o.photos.length} 張` : null,
+    o.serviceFee ? `・代購費　${fmt(o.serviceFee)}` : null,
+    `・台灣運費（${o.shipping}）　${o.shippingFee}`,
+    `預估金額：${fmt(o.total)}${o.priceTbd ? " 起" : ""}${o.wish || o.photos.length ? "（不含許願商品）" : ""}`,
+    ``,
+    `姓名：${o.name}`,
+    `${o.contactType}：${o.contact}`,
+    `電話：${o.phone}`,
+    o.email ? `Email：${o.email}` : null,
+    o.shipInfo ? `取貨資訊：${o.shipInfo}` : null,
+    o.note ? `備註：${o.note}` : null,
+  ].filter((x) => x !== null).join("\n");
+}
+
+$("#form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (isClosed()) { applyClosed(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+  const c = calc(), errs = validate(c);
+  $("#formErr").textContent = errs.join("、");
+  if (errs.length) { document.querySelector(".invalid")?.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+  const o = {
+    id: orderId($("#f-contact").value),
+    createdAt: new Date().toLocaleString("zh-TW", { hour12: false }),
+    items: c.lines.map(({ name, qty, price, subtotal }) => ({ name, qty, price, subtotal })),
+    serviceFee: c.service,
+    shipping: c.ship.name,
+    shippingFee: c.ship.fee == null ? "另計" : c.ship.fee ? fmt(c.ship.fee) : "免運",
+    total: c.total, priceTbd: c.tbd,
+    name: $("#f-name").value.trim(),
+    contactType: "Instagram",
+    contact: "@" + $("#f-contact").value.trim().replace(/^@+/, ""),
+    phone: $("#f-phone").value.trim(),
+    email: $("#f-email").value.trim(),
+    shipInfo: $("#f-shipinfo").value.trim(),
+    wish: c.wish,
+    photos: photos.map((p) => ({ type: p.type, data: p.data })),
+    note: $("#f-note").value.trim(),
+  };
+  o.text = buildText(o);
+
+  let sent = false;
+  const gfUrl = googleFormPostUrl();
+  if (!CONFIG.demoMode && (CONFIG.orderEndpoint || gfUrl)) {
+    const btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "送出中…";
+    const jobs = [];
+    if (CONFIG.orderEndpoint) {
+      // Apps Script 會回覆 { ok: true } 或 { ok: false, error: "closed" }
+      jobs.push(fetch(CONFIG.orderEndpoint, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(o) })
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.error === "closed") serverClosed = true;
+          if (!d.ok) throw new Error(d.error || "not ok");
+        }));
+    }
+    if (gfUrl) {
+      jobs.push(fetch(gfUrl, { method: "POST", mode: "no-cors", body: googleFormBody(o) }));
+    }
+    const results = await Promise.allSettled(jobs);
+    sent = results.some((r) => r.status === "fulfilled");
+    btn.disabled = false; btn.textContent = "送出訂單";
+    if (serverClosed) { applyClosed(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+  }
+  showDone(o, sent);
+});
+
+// 把 .../viewform 網址轉成表單的送出網址 .../formResponse
+function googleFormPostUrl() {
+  const u = (CONFIG.googleForm && CONFIG.googleForm.formUrl || "").trim();
+  if (!u) return "";
+  return u.split("?")[0].replace(/\/(viewform|formResponse)?\/?$/, "") + "/formResponse";
+}
+
+function googleFormBody(o) {
+  const e = CONFIG.googleForm.entries || {};
+  const values = {
+    orderId: o.id,
+    name: o.name,
+    contact: `${o.contactType}：${o.contact}`,
+    phone: o.phone,
+    email: o.email,
+    items: o.items.map((l) => `${l.name} × ${l.qty}`).join("\n"),
+    total: fmt(o.total) + (o.priceTbd ? " 起" : ""),
+    shipping: `${o.shipping}（運費 ${o.shippingFee}）`,
+    shipInfo: o.shipInfo,
+    note: o.note,
+    fullText: o.text,
+    wish: o.wish,
+  };
+  const body = new URLSearchParams();
+  Object.keys(values).forEach((k) => { if (e[k]) body.append(e[k], values[k] || ""); });
+  return body;
+}
+
+function showDone(o, sent) {
+  $("#main").hidden = true; $("#bar").hidden = true; $("#done").hidden = false;
+  $("#doneMsg").textContent = CONFIG.demoMode
+    ? `訂單編號 ${o.id}。這是作品展示版，訂單沒有送出。正式版會把訂單寫進 Google 試算表，再用 Instagram 私訊買家匯款資訊。`
+    : sent
+    ? `訂單編號 ${o.id} 已送出。我們會在 1–2 天內透過 ${o.contactType} 私訊匯款資訊，請在收到後 3 天內付清商品全額。也可以複製下方內容私訊給我們留存。`
+    : `訂單編號 ${o.id}。請複製下方內容，私訊傳給我們，收到後才算完成下單。${o.photos.length ? "許願照片也請一併私訊傳給我們。" : ""}`;
+  $("#orderText").textContent = o.text;
+  const rows = [];
+  if (CONFIG.contact.line) rows.push(`<div>LINE：<code>${esc(CONFIG.contact.line)}</code></div>`);
+  if (CONFIG.contact.instagram) rows.push(`<div>Instagram：<a href="https://www.instagram.com/${encodeURIComponent(CONFIG.contact.instagram.replace(/^@/, ""))}/" target="_blank" rel="noopener"><code>@${esc(CONFIG.contact.instagram.replace(/^@/, ""))}</code></a></div>`);
+  $("#contactBox").innerHTML = rows.join("");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+$("#copyBtn").addEventListener("click", () => {
+  const t = $("#orderText").textContent;
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#orderText")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $("#toast").textContent = "已選取文字，請長按或按 ⌘C／Ctrl+C 複製"; };
+  try { navigator.clipboard.writeText(t).then(() => { $("#toast").textContent = "已複製，貼到 Instagram 私訊即可"; }, fallback); } catch (_) { fallback(); }
+});
+$("#newBtn").addEventListener("click", () => {
+  Object.keys(qty).forEach((k) => (qty[k] = 0));
+  $("#form").reset(); $("#formErr").textContent = ""; $("#toast").textContent = "";
+  photos = []; renderPhotos();
+  document.querySelectorAll(".invalid").forEach((x) => x.classList.remove("invalid"));
+  $("#done").hidden = true; $("#main").hidden = false; $("#bar").hidden = false; update(); window.scrollTo({ top: 0 });
+  if (isClosed()) { closedApplied = false; applyClosed(); }
+});
+$("#barBtn").addEventListener("click", () => {
+  const target = calc().count ? "#h-buyer" : "#h-products";
+  $(target).scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+renderHeader(); renderProducts(); renderShipping(); update();
+applyClosed();
+if (!isNaN(closeTime) && !isClosed()) {
+  // 頁面一直開著也會在截止時間關閉
+  const timer = setInterval(() => { if (isClosed()) { clearInterval(timer); applyClosed(); } }, 15000);
+}
+</script>
+
+</html>
