@@ -62,7 +62,11 @@ export const ProjectsPage = ({ featuredOnly }: { featuredOnly?: boolean }) => {
         </div>
       )}
 
-      <div className="section section--flush section--portfolio">
+      {/* The landing selection is always three cards, so it keeps three
+          columns at 2xl instead of leaving the fourth empty. */}
+      <div
+        className={`section section--flush section--portfolio ${featuredOnly ? "section--portfolio-featured" : ""}`}
+      >
         <ProjectCard projects={projects} />
       </div>
 
