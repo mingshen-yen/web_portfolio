@@ -1,10 +1,18 @@
 [
   {
+    "date": "2026-10-06",
+    "tag": "Project",
+    "title": "Case study: Berlin Jellycat pre-order page",
+    "description": "A mobile-first order page and Google Sheets back office for a personal-shopping run from Berlin to Taiwan, now written up with a demo of the full ordering flow.",
+    "url": "/projects/berlin-jellycat-preorder",
+    "linkLabel": "Read the case study"
+  },
+  {
     "date": "2026-09-09",
     "tag": "Launch",
     "title": "Near-Fault Pulse Database is live",
     "description": "The velocity-pulse classifier now runs as a hosted pipeline, pulling waveforms from the strong-motion archives and refreshing itself every six hours.",
-    "url": "https://pulse-extraction.pages.dev/",
+    "url": "https://mingslab.com/pulse_database/",
     "linkLabel": "Open the map"
   },
   {

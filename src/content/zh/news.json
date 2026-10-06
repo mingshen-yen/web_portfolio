@@ -1,10 +1,18 @@
 [
   {
+    "date": "2026-10-06",
+    "tag": "專案",
+    "title": "案例：柏林 Jellycat 代購預購頁",
+    "description": "為柏林到台灣的代購打造的手機版訂購頁與 Google Sheets 後台，現在整理成案例，並附上可以完整走一遍下單流程的展示版。",
+    "url": "/zh/projects/berlin-jellycat-preorder",
+    "linkLabel": "閱讀案例"
+  },
+  {
     "date": "2026-09-09",
     "tag": "上線",
     "title": "近斷層速度脈衝資料庫上線",
     "description": "速度脈衝分類器改寫成線上管線，直接從強震資料庫抓取波形，每六小時自動更新一次。",
-    "url": "https://pulse-extraction.pages.dev/",
+    "url": "https://mingslab.com/pulse_database/",
     "linkLabel": "打開地圖"
   },
   {
