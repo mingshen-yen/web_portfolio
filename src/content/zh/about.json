@@ -36,25 +36,57 @@
   ],
   "experience": [
     {
-      "title": "研究資料科學家",
-      "company": "GFZ Helmholtz-Zentrum für Geoforschung",
+      "title": "資料科學專案（職涯轉換）",
+      "company": "mingsLab",
       "location": "德國波茨坦",
-      "period": "2019-2026",
+      "period": "2026-至今",
       "descriptions": [
-        "**地震與地震危害度建模：** 以地震資料建立地震震源行為、地動與地震波傳播的物理與統計模型。",
-        "**資料與計算方法：** 建立可重現的 Python 資料流程，整合全歐洲大量且異質的地震與地理空間資料，用於地震危害度評估。",
-        "**研究與科學傳播：** 發表 5 篇地震學期刊論文，並透過報告、簡報與研討會，將複雜的危害度建模結果傳達給研究者、工程師與非專業聽眾。"
+        "**近斷層脈衝資料庫：** 建立自動化 Python 資料流程，從全球資料庫抓取地震紀錄、偵測具破壞性的速度脈衝，並每 6 小時更新互動地圖；可重現 27 筆已發表結果中的 25 筆，並以 70 項自動化測試把關。",
+        "**AI 輔助開發：** 以 AI coding agents 建立整套流程，由 agents 負責抓取資料，並在排程流程中執行品質檢查。",
+        "**職涯轉換：** 從學術研究轉向業界，以地震危害度資料科學的作品集專案呈現成果，發表於本網站。"
       ]
     },
     {
-      "title": "研究資料分析師",
+      "title": "客座研究員（兼職）",
+      "company": "GFZ Helmholtz Centre for Geosciences",
+      "location": "德國波茨坦",
+      "period": "2025-2026",
+      "descriptions": [
+        "**研究：** 共同發表地震地動與地震危害度相關的同儕審查論文。",
+        "**進修：** 同時完成密集的 AI 軟體開發課程（WBS Coding School，2026）。"
+      ]
+    },
+    {
+      "title": "科學研究員",
+      "company": "GFZ Helmholtz Centre for Geosciences",
+      "location": "德國波茨坦",
+      "period": "2019-2025",
+      "descriptions": [
+        "**歐陸尺度資料流程：** 以 Python 與 SQL 建立資料流程，將德國、義大利、法國與波蘭約 1,600 個測站、約 5,200 萬筆原始地震波形，整理成 22 萬筆通過品質控管的頻譜，以及含 6,135 個地震特徵的目錄。",
+        "**危害度建模：** 開發並驗證地震震源與地動尺度關係的物理與統計模型，成果用於校正歐洲地震危害度評估的地動模擬。",
+        "**訊號處理：** 為台灣、日本、紐西蘭、土耳其與歐洲的多網強震資料設計處理流程，指出以規模為基礎的模型會忽略具破壞性的近斷層地動在不同場址間的顯著差異。",
+        "**科學傳播與發表：** 向非專業與政策聽眾傳達危害度建模成果，共發表 7 篇同儕審查論文，其中 4 篇為第一作者。"
+      ]
+    },
+    {
+      "title": "研究實習生",
+      "company": "Impact Forecasting, Aon",
+      "location": "捷克布拉格",
+      "period": "2022",
+      "descriptions": [
+        "**危害模型輸入資料：** 彙整、清理並統一義大利與瑞士的地震與場址條件資料，作為 Impact Forecasting 地震危害與風險模型更新場址模型的輸入。",
+        "**巨災模型：** 與模型開發人員合作，了解從危害與場址輸入到 Aon 內部建模系統的完整巨災模型流程。"
+      ]
+    },
+    {
+      "title": "研究助理",
       "company": "國立中央大學",
       "location": "台灣桃園",
       "period": "2016-2019",
       "descriptions": [
-        "**國際研究合作：** 參與國際地震危害與風險會議，促成台灣、日本與紐西蘭研究團隊之間的跨國合作、模型開發與資料交換。",
-        "**地震模擬與危害度建模：** 以 SEM 與 FK + EXSIM 進行歷史地震的數值模擬，支援地震危害與風險建模，以及高風險場址評估。",
-        "**跨領域風險評估：** 與地質學家、地震學家及工程地震學家合作，整合地質、地震與工程資料進行場址風險評估，並向政府機關提交技術報告。"
+        "**場址風險評估：** 為用過核子燃料最終處置場址進行地震場址風險評估並提交政府機關，整合地質學家、地震學家與工程地震學家的證據。",
+        "**地動模擬：** 進行寬頻地動模擬以推估地震震源參數，用於場址評估，並以實際地震紀錄驗證（2021 年發表）。",
+        "**台灣地震模型：** 為台灣地震模型（TEM）模擬歷史地震，並支援與日本、紐西蘭團隊之間的模型與資料交換。"
       ]
     }
   ],
@@ -64,7 +96,7 @@
       "uni": "Universität Potsdam",
       "location": "德國",
       "period": "2019-2024",
-      "description": "EU Marie Skłodowska-Curie，以 magna cum laude 優等畢業。"
+      "description": "EU Marie Skłodowska-Curie 研究員（URBASIS 計畫），以 magna cum laude 優等畢業。"
     },
     {
       "degree": "地球物理學碩士",
@@ -89,7 +121,7 @@
       "url": "https://doi.org/10.1177/87552930241305012"
     },
     {
-      "title": "Source parameters and scaling relationships of stress drop for shallow crustal earthquakes in Western Europe",
+      "title": "Source parameters and scaling relationships of stress drop for shallow crustal seismic events in Western Europe",
       "venue": "Journal of Seismology",
       "year": "2024",
       "url": "https://doi.org/10.1007/s10950-023-10188-y"
@@ -99,6 +131,12 @@
       "venue": "Bulletin of the Seismological Society of America",
       "year": "2022",
       "url": "https://doi.org/10.1785/0120200376"
+    },
+    {
+      "title": "Investigation and hazard implication of 1604 Quanzhou earthquake using modern simulation with literature intensity",
+      "venue": "Terrestrial, Atmospheric and Oceanic Sciences",
+      "year": "2021",
+      "url": "https://doi.org/10.3319/TAO.2021.01.04.01"
     }
   ],
   "certificates": [
@@ -122,7 +160,15 @@
     },
     {
       "category": "工具",
-      "items": ["QGIS", "Jupyter", "Linux/Unix", "Git/GitHub", "HPC 叢集"]
+      "items": [
+        "OpenQuake",
+        "QGIS",
+        "Jupyter",
+        "Linux/Unix",
+        "Git/GitHub",
+        "AI coding agents",
+        "HPC 叢集"
+      ]
     },
     {
       "category": "網頁開發",
@@ -137,7 +183,7 @@
     },
     {
       "category": "語言",
-      "items": ["英文（流利）", "德文（中等）", "中文（母語）"]
+      "items": ["英文（流利）", "德文（B1，準備 B2）", "中文（母語）"]
     }
   ]
 }

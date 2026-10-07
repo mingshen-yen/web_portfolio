@@ -40,25 +40,57 @@
   ],
   "experience": [
     {
-      "title": "Research Data Scientist",
-      "company": "GFZ Helmholtz-Zentrum für Geoforschung",
+      "title": "Data Science Projects (Career Transition)",
+      "company": "mingsLab",
       "location": "Potsdam, Germany",
-      "period": "2019-2026",
+      "period": "2026-present",
       "descriptions": [
-        "**Earthquake & Seismic Hazard Modeling:** Developed physics-based and statistical models of earthquake source behavior, ground motion, and seismic wave propagation using seismic data.",
-        "**Data & Computational Methods:** Built reproducible Python pipelines to integrate large, heterogeneous seismic and geospatial datasets across Europe for seismic hazard assessment.",
-        "**Research & Science Communication:** Published 5 journal articles in seismology, and communicated complex hazard modeling results to researchers, engineers, and non-specialists through reports, presentations, and conferences."
+        "**Near-Fault Pulse Database:** Built an automated Python pipeline that pulls earthquake records from global archives, detects damaging velocity pulses and updates a live interactive map every 6 hours; it reproduces 25 of 27 published results and is backed by 70 automated tests.",
+        "**AI-assisted Development:** Built the pipeline with AI coding agents, which fetch the data and run quality checks on a scheduled pipeline.",
+        "**Career Transition:** Moving from research to industry through portfolio projects in seismic hazard data science, published on this site."
       ]
     },
     {
-      "title": "Research Data Analyst",
+      "title": "Guest Researcher (part-time)",
+      "company": "GFZ Helmholtz Centre for Geosciences",
+      "location": "Potsdam, Germany",
+      "period": "2025-2026",
+      "descriptions": [
+        "**Research:** Co-authored peer-reviewed publications on earthquake ground motion and seismic hazard.",
+        "**Training:** In parallel, completed an intensive AI Software Development course (WBS Coding School, 2026)."
+      ]
+    },
+    {
+      "title": "Scientific Researcher",
+      "company": "GFZ Helmholtz Centre for Geosciences",
+      "location": "Potsdam, Germany",
+      "period": "2019-2025",
+      "descriptions": [
+        "**Continental-scale Data Pipeline:** Built a Python and SQL pipeline that reduced ~52 million raw seismic waveforms from ~1,600 stations in Germany, Italy, France and Poland to 220,000 quality-controlled spectra and a catalogue of 6,135 characterised earthquakes.",
+        "**Hazard Modelling:** Developed and validated physics-based and statistical models of earthquake sources and ground-motion scaling, used to calibrate ground-motion simulations for European seismic hazard assessment.",
+        "**Signal Processing:** Designed workflows for multi-network strong-motion data from Taiwan, Japan, New Zealand, Türkiye and Europe, showing that magnitude-based models miss strong site-to-site variability in damaging near-fault ground motion.",
+        "**Communication & Publications:** Communicated hazard modelling results to non-specialist and policy audiences, and published 7 peer-reviewed papers, 4 as first author."
+      ]
+    },
+    {
+      "title": "Research Intern",
+      "company": "Impact Forecasting, Aon",
+      "location": "Prague, Czechia",
+      "period": "2022",
+      "descriptions": [
+        "**Hazard Model Inputs:** Compiled, cleaned and harmonised earthquake and site-condition data for Italy and Switzerland as input to a site-model update for Impact Forecasting's seismic hazard and risk models.",
+        "**Catastrophe Modelling:** Worked with model developers to understand the end-to-end catastrophe-modelling workflow, from hazard and site inputs to Aon's internal modelling systems."
+      ]
+    },
+    {
+      "title": "Research Assistant",
       "company": "National Central University",
       "location": "Taoyuan, Taiwan",
       "period": "2016-2019",
       "descriptions": [
-        "**International Research Collaboration:** Contributed to international seismic hazard and risk meetings and facilitated cross-country collaboration, model development, and data exchange among research teams in Taiwan, Japan, and New Zealand.",
-        "**Earthquake Simulation & Hazard Modeling:** Conducted numerical simulations of historical earthquakes using SEM and FK + EXSIM to support earthquake hazard and risk modeling and high-stakes site evaluations.",
-        "**Cross-disciplinary Risk Assessment:** Collaborated with geologists, seismologists, and engineering seismologists to integrate geological, seismic, and engineering data into site risk assessments, delivering technical reports to government agencies."
+        "**Site Risk Assessment:** Delivered seismic site risk assessments to government agencies for a spent nuclear fuel disposal site, integrating evidence from geologists, seismologists and engineering seismologists.",
+        "**Ground-motion Simulation:** Ran broadband ground-motion simulations to estimate earthquake source parameters for the site evaluation, validated against recorded seismic data (published 2021).",
+        "**Taiwan Earthquake Model:** Simulated historical earthquakes for the Taiwan Earthquake Model and supported model and data exchange with teams in Japan and New Zealand."
       ]
     }
   ],
@@ -68,7 +100,7 @@
       "uni": "Universität Potsdam",
       "location": "Germany",
       "period": "2019-2024",
-      "description": "EU Marie Skłodowska-Curie Fellow. Graduated magna cum laude."
+      "description": "EU Marie Skłodowska-Curie Fellow (URBASIS). Graduated magna cum laude."
     },
     {
       "degree": "MSc in Geophysics",
@@ -93,7 +125,7 @@
       "url": "https://doi.org/10.1177/87552930241305012"
     },
     {
-      "title": "Source parameters and scaling relationships of stress drop for shallow crustal earthquakes in Western Europe",
+      "title": "Source parameters and scaling relationships of stress drop for shallow crustal seismic events in Western Europe",
       "venue": "Journal of Seismology",
       "year": "2024",
       "url": "https://doi.org/10.1007/s10950-023-10188-y"
@@ -103,6 +135,12 @@
       "venue": "Bulletin of the Seismological Society of America",
       "year": "2022",
       "url": "https://doi.org/10.1785/0120200376"
+    },
+    {
+      "title": "Investigation and hazard implication of 1604 Quanzhou earthquake using modern simulation with literature intensity",
+      "venue": "Terrestrial, Atmospheric and Oceanic Sciences",
+      "year": "2021",
+      "url": "https://doi.org/10.3319/TAO.2021.01.04.01"
     }
   ],
   "certificates": [
@@ -133,10 +171,12 @@
     {
       "category": "Tools",
       "items": [
+        "OpenQuake",
         "QGIS",
         "Jupyter",
         "Linux/Unix",
         "Git/GitHub",
+        "AI coding agents",
         "HPC clusters"
       ]
     },
@@ -155,7 +195,7 @@
       "category": "Languages",
       "items": [
         "English (advanced)",
-        "German (intermediate)",
+        "German (B1, working towards B2)",
         "Mandarin (native)"
       ]
     }
