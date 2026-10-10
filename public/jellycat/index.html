@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex">
 <title>柏林限定 Jellycat 代購</title>
 <meta name="description" content="柏林限定 Jellycat 代購下單頁，台灣取貨／寄送。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -318,16 +317,16 @@ const CONFIG = {
   intro: "在柏林門市現場幫你帶回限定款。送出訂單後，我們會私訊確認庫存與付款方式。",
   deadline: "收單至 11/1（日）23:59（台灣時間）",                 // 收單截止，例："收單至 10/20（一）23:59"，留空則不顯示
   // 自動關閉下單的時間，+08:00 代表台灣時間；留空則不會自動關閉
-  closeAt: "",
+  closeAt: "2026-11-01T23:59:00+08:00",
   closedMessage: "本次收單已截止，謝謝大家！下次開團會在 Instagram 公告。",
   arrival: "預計 12 月第一週抵台，抵台後陸續寄出或安排面交。",   // 顯示在頁首，留空則不顯示
   priceNote: "標示「含禮品包裝」的 Jellyfest 體驗款，售價含禮品包裝、貼紙和徽章。",   // 顯示在商品區標題下方，留空則不顯示
   showDraftBanner: true,        // 價格確定後改成 false
-  demoMode: true,              // 作品集展示版：true 時不送出訂單，頁首顯示展示版說明
+  demoMode: false,              // 作品集展示版：true 時不送出訂單，頁首顯示展示版說明
 
   // 送單網址：貼上 Google Apps Script 網頁應用程式網址（見 README）。
   // 留空時，送出後會產生訂單文字，請買家複製傳給你。
-  orderEndpoint: "",
+  orderEndpoint: "https://script.google.com/macros/s/AKfycbz0XcD3rxkhkfda1bymb8qXByMWIEp0CgAX-QIO2uvBhQeKH-XOazMwSx43stDPzwbP/exec",
 
   // 送到 Google 表單：填入表單網址與各題的 entry 編號（見 README）。
   // formUrl 留空就不送。可以和 orderEndpoint 擇一或同時使用。
@@ -351,7 +350,7 @@ const CONFIG = {
   },
 
   // 你的聯絡帳號（顯示在送出後的畫面）
-  contact: { line: "", instagram: "" },
+  contact: { line: "", instagram: "mxyende19" },
 
   // 頁首「關於這次代購」，text 留空則不顯示
   about: {
@@ -371,15 +370,15 @@ const CONFIG = {
   // storePhoto: true 會在照片角落標示「柏林店內實拍」，只用在自己拍的照片
   // perk：顯示在價格下方的小字，例如是否含禮品包裝；不需要就不寫
   products: [
-    { id: "wilhelm",  name: "Wilhelm Von Bratwurst", zh: "德式香腸", price: 3570, image: "", status: "open", storePhoto: true, tint: "#f6dccb", mono: "W", perk: "含禮品包裝、貼紙、徽章" },
-    { id: "heinrich", name: "Heinrich Pretzel",      zh: "椒鹽卷餅", price: 3880, image: "", status: "open", storePhoto: true, tint: "#f3e3c1", mono: "H", perk: "含禮品包裝、貼紙、徽章" },
-    { id: "kathrin",  name: "Kathrin Candy Floss",   zh: "棉花糖",   price: 3880, image: "", status: "open", storePhoto: true, tint: "#f9dbe6", mono: "K", perk: "含禮品包裝、貼紙、徽章" },
-    { id: "vonilla",  name: "Von Illa Eiskaffee",    zh: "冰咖啡",   price: 3880, image: "", status: "open", storePhoto: true, tint: "#e2dcd3", mono: "V", perk: "含禮品包裝、貼紙、徽章" },
-    { id: "almond",   name: "Candied Almond",        zh: "糖衣杏仁",   price: 2000, image: "", status: "open", tint: "#efe4d6", mono: "A" },
-    { id: "gingerbread", name: "Schönherz Gingerbread Bag Charm", zh: "薑餅心吊飾", price: 2200, image: "", status: "open", storePhoto: true, tint: "#efe4d6", mono: "G" },
-    { id: "gingerbag", name: "Schönherz Gingerbread Bag", zh: "薑餅心包包", price: 4120, image: "", status: "open", storePhoto: true, tint: "#efe4d6", mono: "G" },
-    { id: "pickle",   name: "Pickle Bag Charm",      zh: "醃黃瓜吊飾", price: 1680, image: "", status: "open", storePhoto: true, tint: "#e3ead2", mono: "P" },
-    { id: "cloud",    name: "Storm Cloud Bag Charm", zh: "烏雲吊飾",   price: 1830, image: "", status: "open", storePhoto: true, tint: "#e4e6ea", mono: "C" },
+    { id: "wilhelm",  name: "Wilhelm Von Bratwurst", zh: "德式香腸", price: 3570, image: "img/store-wilhelm.webp", status: "open", storePhoto: true, tint: "#f6dccb", mono: "W", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "heinrich", name: "Heinrich Pretzel",      zh: "椒鹽卷餅", price: 3880, image: "img/store-pretzel.webp", status: "open", storePhoto: true, tint: "#f3e3c1", mono: "H", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "kathrin",  name: "Kathrin Candy Floss",   zh: "棉花糖",   price: 3880, image: "img/store-candy-floss.webp", status: "open", storePhoto: true, tint: "#f9dbe6", mono: "K", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "vonilla",  name: "Von Illa Eiskaffee",    zh: "冰咖啡",   price: 3880, image: "img/store-eiskaffee.webp", status: "open", storePhoto: true, tint: "#e2dcd3", mono: "V", perk: "含禮品包裝、貼紙、徽章" },
+    { id: "almond",   name: "Candied Almond",        zh: "糖衣杏仁",   price: 2000, image: "img/candied-almond.webp", status: "open", tint: "#efe4d6", mono: "A" },
+    { id: "gingerbread", name: "Schönherz Gingerbread Bag Charm", zh: "薑餅心吊飾", price: 2200, image: "img/store-gingerbread-charm.webp", status: "open", storePhoto: true, tint: "#efe4d6", mono: "G" },
+    { id: "gingerbag", name: "Schönherz Gingerbread Bag", zh: "薑餅心包包", price: 4120, image: "img/store-gingerbread-bag.webp", status: "open", storePhoto: true, tint: "#efe4d6", mono: "G" },
+    { id: "pickle",   name: "Pickle Bag Charm",      zh: "醃黃瓜吊飾", price: 1680, image: "img/store-pickle-charm.webp", status: "open", storePhoto: true, tint: "#e3ead2", mono: "P" },
+    { id: "cloud",    name: "Storm Cloud Bag Charm", zh: "烏雲吊飾",   price: 1830, image: "img/store-storm-cloud-charm.webp", status: "open", storePhoto: true, tint: "#e4e6ea", mono: "C" },
   ],
 
   // 取貨方式：fee 填數字會列入試算；填 null 顯示「另計」

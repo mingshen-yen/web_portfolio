@@ -27,7 +27,7 @@ The plush toys are sold only at a booked event inside KaDeWe, a Berlin departmen
 #### ***Decisions***
 
 1. **Web page over Notion or Tally**: neither could show product cards, quantity limits, and a running total in one mobile-friendly form
-2. **Pricing**: worked out from the official euro prices, the exchange rate, and card fees, landing at roughly a 27–30% margin per item
+2. **Pricing**: worked out from the official euro prices, the exchange rate, and card fees, with a 40% margin on the event-only items and 30% on regular shelf items
 3. **One per buyer**: because the store allows only three per item per customer, a lower per-buyer limit spreads the spots across more people
 4. **Full prepayment within three days**: items cannot be returned once bought, so payment comes first, and unpaid spots pass to the next buyer
 

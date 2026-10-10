@@ -27,5 +27,9 @@
 /portfolio       /projects            301
 /zh/portfolio    /zh/projects         301
 
+# The Jellycat order page is a standalone static page with relative image
+# paths, so it must be served with a trailing slash.
+/jellycat  /jellycat/  301
+
 # SPA fallback — must stay last, or it would swallow the rules above.
 /*  /index.html  200
