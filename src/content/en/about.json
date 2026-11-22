@@ -1,14 +1,10 @@
 {
   "aboutMe": {
     "name": "Ming-Hsuan",
-    "title": "Data Science | Natural Hazards | Content Creation",
+    "title": "Data Science | Natural Hazards | Youtuber",
     "description": "Science is not just knowing. It's discovering.",
     "image": "/images/aboutme_photo.jpg",
-    "skills": [
-      "Python",
-      "Data Analysis",
-      "Web Dev"
-    ]
+    "skills": ["Python", "Data Analysis", "Web Dev"]
   },
   "story": [
     {
@@ -160,13 +156,7 @@
   "skills": [
     {
       "category": "Programming",
-      "items": [
-        "Python",
-        "FORTRAN",
-        "MATLAB",
-        "SQL",
-        "TypeScript"
-      ]
+      "items": ["Python", "FORTRAN", "MATLAB", "SQL", "TypeScript"]
     },
     {
       "category": "Tools",
