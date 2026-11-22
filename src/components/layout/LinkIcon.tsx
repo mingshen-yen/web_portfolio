@@ -1,4 +1,4 @@
-import { Coffee, Link2, Podcast } from "lucide-react";
+import { Coffee, Landmark, Link2, Podcast } from "lucide-react";
 
 /**
  * lucide-react dropped its brand marks, so the platform logos are inlined here
@@ -34,5 +34,6 @@ export const LinkIcon = ({ name }: { name: string }) => {
 
   if (name === "podcast") return <Podcast aria-hidden="true" />;
   if (name === "kofi") return <Coffee aria-hidden="true" />;
+  if (name === "museum") return <Landmark aria-hidden="true" />;
   return <Link2 aria-hidden="true" />;
 };

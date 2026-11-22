@@ -19,6 +19,12 @@
   ],
   "links": [
     {
+      "icon": "museum",
+      "label": "柏林博物館中文導覽揪團",
+      "description": "每月一場，看近期場次並報名",
+      "url": "/museum-tours/"
+    },
+    {
       "icon": "youtube",
       "label": "YouTube",
       "description": "Mingshen",

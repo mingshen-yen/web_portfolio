@@ -19,6 +19,12 @@
   ],
   "links": [
     {
+      "icon": "museum",
+      "label": "Berlin museum tours in Chinese",
+      "description": "One museum a month, guided in Mandarin — dates and sign-up",
+      "url": "/museum-tours/"
+    },
+    {
       "icon": "youtube",
       "label": "YouTube",
       "description": "Mingshen",
