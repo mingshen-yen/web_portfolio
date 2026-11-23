@@ -21,49 +21,49 @@
     {
       "icon": "museum",
       "label": "柏林博物館中文導覽揪團",
-      "description": "看近期場次並報名參加",
+      "description": "博物館中文導覽清單 - 近期場次及報名",
       "url": "/museum-tours/"
     },
     {
       "icon": "youtube",
       "label": "YouTube",
-      "description": "Mingshen",
+      "description": "Mingshen - 記錄旅行、日常的小發現，還有探索人生的過程",
       "url": "https://www.youtube.com/@mingshenworld"
     },
     {
       "icon": "facebook",
       "label": "Facebook",
-      "description": "Mingshen看世界",
+      "description": "Mingshen看世界 - 我的日常和旅行紀錄、一些YT影片精華版",
       "url": "https://www.facebook.com/mingshenworld"
     },
     {
       "icon": "instagram",
       "label": "Instagram",
-      "description": "@mxyende19",
+      "description": "我的日常和旅行紀錄、一些YT影片精華版",
       "url": "https://www.instagram.com/mxyende19"
     },
     {
       "icon": "podcast",
       "label": "Apple Podcasts",
-      "description": "Huh? Germany! 德國生活的真實樣貌",
+      "description": "Huh? Germany! - 德國不只一種生活（音訊版）",
       "url": "https://podcasts.apple.com/us/podcast/huh-germany/id1821219131"
     },
     {
       "icon": "spotify",
       "label": "Spotify",
-      "description": "Huh? Germany! 德國生活的真實樣貌",
+      "description": "Huh? Germany! 德國不只一種生活（音訊版）",
       "url": "https://open.spotify.com/show/7BLedCETH8biaAsuuAs1I8"
     },
     {
       "icon": "medium",
       "label": "Medium",
-      "description": "關於資料、研究與生活的文章",
+      "description": "關於資料研究、工具運用與生活的文章",
       "url": "https://medium.com/@minghsuanyen"
     },
     {
       "icon": "kofi",
       "label": "Ko-fi",
-      "description": "請我喝杯咖啡",
+      "description": "支持我的工作",
       "url": "https://ko-fi.com/mxyen"
     }
   ]
