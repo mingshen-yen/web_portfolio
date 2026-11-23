@@ -38,15 +38,9 @@
     },
     {
       "icon": "podcast",
-      "label": "Apple Podcasts - Huh? Germany!",
+      "label": "Podcasts - Huh? Germany!",
       "description": "德國不只一種生活（音訊版）",
-      "url": "https://podcasts.apple.com/us/podcast/huh-germany/id1821219131"
-    },
-    {
-      "icon": "spotify",
-      "label": "Spotify - Huh? Germany!",
-      "description": "德國不只一種生活（音訊版）",
-      "url": "https://open.spotify.com/show/7BLedCETH8biaAsuuAs1I8"
+      "url": "https://open.firstory.fm/user/cmdthrpjf01ra01umdz514uwp/episodes"
     },
     {
       "icon": "medium",
