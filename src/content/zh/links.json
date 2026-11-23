@@ -26,14 +26,14 @@
     },
     {
       "icon": "youtube",
-      "label": "YouTube",
-      "description": "Mingshen - 記錄旅行、日常的小發現，還有探索人生的過程",
+      "label": "YouTube - Mingshen",
+      "description": "記錄旅行、日常的小發現，還有探索人生的過程",
       "url": "https://www.youtube.com/@mingshenworld"
     },
     {
       "icon": "facebook",
-      "label": "Facebook",
-      "description": "Mingshen看世界 - 我的日常和旅行紀錄、一些YT影片精華版",
+      "label": "Facebook - Mingshen看世界",
+      "description": "我的日常和旅行紀錄、一些YT影片精華版",
       "url": "https://www.facebook.com/mingshenworld"
     },
     {
@@ -44,14 +44,14 @@
     },
     {
       "icon": "podcast",
-      "label": "Apple Podcasts",
-      "description": "Huh? Germany! - 德國不只一種生活（音訊版）",
+      "label": "Apple Podcasts - Huh? Germany!",
+      "description": "德國不只一種生活（音訊版）",
       "url": "https://podcasts.apple.com/us/podcast/huh-germany/id1821219131"
     },
     {
       "icon": "spotify",
-      "label": "Spotify",
-      "description": "Huh? Germany! 德國不只一種生活（音訊版）",
+      "label": "Spotify - Huh? Germany!",
+      "description": "德國不只一種生活（音訊版）",
       "url": "https://open.spotify.com/show/7BLedCETH8biaAsuuAs1I8"
     },
     {
