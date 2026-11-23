@@ -22,7 +22,7 @@ Several Berlin museums and memorials offer guided tours in Chinese, but only to 
 3. **Cantonese sessions**: marked in blue and written in Cantonese on the card itself, so Cantonese speakers can spot them at a glance
 4. **Confirmation date**: each ticket shows the day, one week before the tour, when I decide whether it goes ahead
 5. **Reminder, not auto-mail**: a daily Apps Script job counts sign-ups per session; a week before each tour it emails me the head count and the list, and leaves a ready-to-send confirmation or cancellation draft in Gmail with every participant in Bcc
-6. **Hosting**: the page is its own Cloudflare Pages project, kept out of the site's GitHub repository, and served at mingslab.com/museum-tours/ through a small proxy function, the same way as my pulse database
+6. **Hosting**: the page is its own Cloudflare Pages project, kept out of the site's GitHub repository, and served at mingslab.com/museum-tours/ through a small proxy function
 
 #### ***Decisions***
 
@@ -34,7 +34,3 @@ Several Berlin museums and memorials offer guided tours in Chinese, but only to 
 #### ***My Role***
 
 I chose the museums, booked the tours with each museum, set the group sizes, fees, and sign-up rules, and wrote the page copy in Mandarin and Cantonese. Claude Code wrote most of the code from my requirements, and I reviewed every change on desktop and phone. Testing caught several issues I then had fixed, including addresses being cut off on narrow phones and the museum list disappearing after I removed a line of text the page script still relied on.
-
-#### ***Result***
-
-The first Berlin-Hohenschönhausen (Stasi prison) tour on the new page filled all twelve places.
