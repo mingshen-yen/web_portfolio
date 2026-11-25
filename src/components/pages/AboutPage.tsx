@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import { Download } from "lucide-react";
 import { getAbout } from "../../api/aboutMe";
 import { getUi } from "../../api/ui";
 import { useLang } from "../../lib/i18n";
@@ -65,13 +64,6 @@ export const AboutPage = () => {
       <section className="section-block section-block--compact">
         <div className="divider">
           <span className="divider__label">{ui.about.background}</span>
-        </div>
-        <div className="section-block__more">
-          {/* Same-origin, so `download` saves the file rather than opening it. */}
-          <a href="/MingHsuanYen-CV.pdf" download className="btn btn--primary">
-            {ui.about.downloadCv}
-            <Download size={14} />
-          </a>
         </div>
       </section>
 

@@ -123,7 +123,6 @@ export type UiStrings = {
     greeting: string;
     iam: string;
     background: string;
-    downloadCv: string;
     publications: string;
     certificates: string;
     experience: string;
