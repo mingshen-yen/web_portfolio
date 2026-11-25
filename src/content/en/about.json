@@ -22,7 +22,7 @@
       ]
     },
     {
-      "heading": "Travel, books, films, and overthinking 💭",
+      "heading": "Travel, books, and films 💭",
       "paragraphs": [
         "Outside the research, I like to travel, read, watch films, and think about whatever life puts in front of me.",
         "Living in Germany now, I keep meeting new questions — in different places, different books, different stories.",
@@ -36,14 +36,12 @@
   ],
   "experience": [
     {
-      "title": "Data Science Projects (Career Transition)",
-      "company": "mingsLab",
+      "title": "Geoscientist & AI Consultant",
+      "company": "mingsLab, Freelance",
       "location": "Potsdam, Germany",
       "period": "2026-present",
       "descriptions": [
-        "**Near-Fault Pulse Database:** Built an automated Python pipeline that pulls earthquake records from global archives, detects damaging velocity pulses and updates a live interactive map every 6 hours; it reproduces 25 of 27 published results and is backed by 70 automated tests.",
-        "**AI-assisted Development:** Built the pipeline with AI coding agents, which fetch the data and run quality checks on a scheduled pipeline.",
-        "**Career Transition:** Moving from research to industry through portfolio projects in seismic hazard data science, published on this site."
+        "**Geophysics · Data Science · Applied AI · Digital Solutions · Education**"
       ]
     },
     {
